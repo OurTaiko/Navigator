@@ -11,6 +11,9 @@ const LinkCard: React.FC<LinkCardProps> = ({ item, index }) => {
   const cardRef = useRef<HTMLAnchorElement>(null);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [iconLoadError, setIconLoadError] = useState(false);
+
+  const isCustomIconUrl = /^https?:\/\//i.test(item.icon);
 
   // Dynamic Icon Rendering
   const IconComponent = (Icons as any)[item.icon] || Icons.Link;
@@ -27,7 +30,7 @@ const LinkCard: React.FC<LinkCardProps> = ({ item, index }) => {
 
     // Calculate rotation based on mouse position
     // Max rotation: 15 degrees
-    const rotateX = ((y - centerY) / centerY) * -10; 
+    const rotateX = ((y - centerY) / centerY) * -10;
     const rotateY = ((x - centerX) / centerX) * 10;
 
     setRotation({ x: rotateX, y: rotateY });
@@ -67,8 +70,8 @@ const LinkCard: React.FC<LinkCardProps> = ({ item, index }) => {
           animate-fade-in-up opacity-0
         `}
         style={{
-          transform: isHovering 
-            ? `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale(1.02)` 
+          transform: isHovering
+            ? `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale(1.02)`
             : 'rotateX(0deg) rotateY(0deg) scale(1)',
           transformStyle: 'preserve-3d',
         }}
@@ -77,24 +80,36 @@ const LinkCard: React.FC<LinkCardProps> = ({ item, index }) => {
         <div className="z-20 absolute inset-0 bg-gradient-to-r from-transparent via-slate-400/10 dark:via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer pointer-events-none" />
 
         {/* Background Gradient Glow */}
-        <div 
-          className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 dark:group-hover:opacity-10 transition-opacity duration-500`} 
+        <div
+          className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 dark:group-hover:opacity-10 transition-opacity duration-500`}
         />
 
         <div className="z-10 relative flex flex-col h-full" style={{ transform: 'translateZ(20px)' }}>
           <div className="flex justify-between items-start mb-4">
             <div className={`p-3 rounded-xl bg-gradient-to-br ${item.color} shadow-lg`}>
-              <IconComponent className="w-6 h-6 text-white" />
+              {isCustomIconUrl && !iconLoadError ? (
+                <div className="w-6 h-6">
+                  <img
+                    src={item.icon}
+                    alt={`${item.title} icon`}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                    onError={() => setIconLoadError(true)}
+                  />
+                </div>
+              ) : (
+                <IconComponent className="w-6 h-6 text-white" />
+              )}
             </div>
             <div className="opacity-0 group-hover:opacity-100 text-slate-400 dark:text-white/50 transition-opacity duration-300">
               <Icons.ExternalLink className="w-5 h-5" />
             </div>
           </div>
-          
+
           <h3 className="mb-1 font-bold text-slate-800 dark:group-hover:text-cyan-200 dark:text-white group-hover:text-cyan-600 text-xl tracking-tight transition-colors">
             {item.title}
           </h3>
-          
+
           <p className="text-slate-500 dark:group-hover:text-gray-300 dark:text-gray-400 group-hover:text-slate-700 text-sm line-clamp-2 transition-colors">
             {item.description}
           </p>

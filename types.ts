@@ -3,19 +3,14 @@ export interface LinkItem {
   title: string;
   url: string;
   category: CategoryType;
-  icon: string; // Lucide icon name
+  icon: string; // Lucide icon name or custom icon URL
   description: string;
   color: string;
 }
 
 export enum CategoryType {
   ALL = 'All',
-  DEVELOPMENT = 'Development',
-  DESIGN = 'Design',
-  SOCIAL = 'Social',
-  ENTERTAINMENT = 'Entertainment',
-  PRODUCTIVITY = 'Productivity',
   TOOL = '工具',
-  FRIEND = '友链',
-  OFFICIAL = '华师大官方网站'
+  DEVELOPMENT = '开发',
+  SIMULATOR = '模拟器',
 }
