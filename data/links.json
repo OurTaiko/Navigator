@@ -1,6 +1,5 @@
 [
   {
-    "id": "1",
     "title": "Our GitHub",
     "url": "https://github.com/OurTaiko",
     "category": "开发",
@@ -9,7 +8,6 @@
     "color": "from-gray-700 to-gray-900"
   },
   {
-    "id": "2",
     "title": "太鼓之达人 Rating",
     "url": "https://rating.ourtaiko.org/",
     "category": "工具",
@@ -18,7 +16,6 @@
     "color": "from-purple-500 to-pink-500"
   },
   {
-    "id": "3",
     "title": "TJA Analyzer",
     "url": "https://tjaanalyzer-ja.ckq.me/",
     "category": "工具",
@@ -27,7 +24,6 @@
     "color": "from-gray-900 to-black"
   },
   {
-    "id": "4",
     "title": "Donder 查分器@陆陆侠",
     "url": "https://donder-tool.llx.life/",
     "category": "工具",
@@ -36,7 +32,6 @@
     "color": "from-pink-400 to-rose-500"
   },
   {
-    "id": "5",
     "title": "Donder 查分器@香草",
     "url": "https://prober.ourtaiko.org/",
     "category": "工具",
@@ -45,7 +40,6 @@
     "color": "from-blue-400 to-blue-600"
   },
   {
-    "id": "6",
     "title": "Taiko Viewer",
     "url": "https://viewer.sakura-bot.cn/",
     "category": "工具",
@@ -54,7 +48,6 @@
     "color": "from-red-500 to-red-700"
   },
   {
-    "id": "7",
     "title": "oLaf黑猫の太鼓国行歌曲搜索系统",
     "url": "https://olaf5103.cn:765/taiko/songs",
     "category": "工具",
@@ -63,7 +56,6 @@
     "color": "from-indigo-500 to-violet-600"
   },
   {
-    "id": "8",
     "title": "OurTaiko CDN",
     "url": "https://cdn.ourtaiko.org/",
     "category": "开发",
@@ -72,7 +64,6 @@
     "color": "from-green-400 to-green-600"
   },
   {
-    "id": "9",
     "title": "TJA-Tatsujin",
     "url": "https://taiko.vanillaaaa.org/",
     "category": "工具",
@@ -81,7 +72,6 @@
     "color": "from-green-400 to-green-600"
   },
   {
-    "id": "10",
     "title": "Taiko Wiki",
     "url": "https://taiko.wiki/",
     "category": "工具",
@@ -90,7 +80,6 @@
     "color": "from-green-400 to-green-600"
   },
   {
-    "id": "11",
     "title": "Donder Assistant",
     "url": "https://dafrok.github.io/donder-assistant",
     "category": "工具",
@@ -99,7 +88,6 @@
     "color": "from-green-400 to-green-600"
   },
   {
-    "id": "12",
     "title": "TJARenderer",
     "url": "https://github.com/jack9966qk/TJARenderer",
     "category": "开发",
@@ -108,7 +96,6 @@
     "color": "from-green-400 to-green-600"
   },
   {
-    "id": "13",
     "title": "TaikøNauts 官方博客",
     "url": "https://docs.taiko.team/blog",
     "category": "模拟器",
@@ -117,12 +104,27 @@
     "color": "from-green-400 to-green-600"
   },
   {
-    "id": "14",
     "title": "OpenTaiko 官网",
     "url": "https://opentaiko.github.io/",
     "category": "模拟器",
     "icon": "https://opentaiko.github.io/favicon.ico",
     "description": "OpenTaiko 的官方网站",
+    "color": "from-green-400 to-green-600"
+  },
+  {
+    "title": "YataiDON",
+    "url": "https://github.com/Yonokid/YataiDON",
+    "category": "模拟器",
+    "icon": "",
+    "description": "TJADB 的成员 Yonokid 开发的太鼓模拟器，官方频道在 TJADB 频道内",
+    "color": "from-green-400 to-green-600"
+  },
+  {
+    "title": "PyTaiko",
+    "url": "https://github.com/Yonokid/PyTaiko",
+    "category": "模拟器",
+    "icon": "",
+    "description": "TJADB 的成员 Yonokid 开发的太鼓模拟器，好像转生为 YataiDON 了",
     "color": "from-green-400 to-green-600"
   }
 ]

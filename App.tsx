@@ -103,7 +103,7 @@ const App: React.FC = () => {
           {filteredLinks.length > 0 ? (
             <div className="gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {filteredLinks.map((item, index) => (
-                <LinkCard key={item.id} item={item} index={index} />
+                <LinkCard key={item.hash} item={item} index={index} />
               ))}
             </div>
           ) : (

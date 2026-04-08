@@ -1,5 +1,5 @@
 export interface LinkItem {
-  id: string;
+  hash: string;
   title: string;
   url: string;
   category: CategoryType;
